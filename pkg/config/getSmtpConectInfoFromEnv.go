@@ -1,7 +1,6 @@
 package config
 
 import (
-	"fmt"
 	"os"
 	"strconv"
 )
@@ -60,6 +59,5 @@ func GetSmtpConnectInfoFromEnv(defaultServer string, defaultPort int, defaultUse
 		User:     user,
 		Password: password,
 	}
-	fmt.Printf("in GetSmtpConnectInfoFromEnv mySmtpConnection : %+v", mySmtpConnection)
 	return &mySmtpConnection, nil
 }
