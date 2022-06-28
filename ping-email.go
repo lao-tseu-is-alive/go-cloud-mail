@@ -13,7 +13,7 @@ const (
 	APP               = "go-cloud-mail"
 	defaultSMTPServer = "smtp.gmail.com"
 	defaultSMTPPort   = 587
-	defaultSMTPUser   = "goeland.lausanne@gmail.com"
+	defaultSMTPUser   = "your.user@gmail.com"
 	defaultSubject    = "🄷🄴🄻🄻🄾 🄵🅁🄾🄼 🄶🄾🄻🄰🄽🄶 😎"
 	defaultRecipient  = "lao.tseu.is.alive@gmail.com"
 	defaultCC         = "carlos.gil@lausanne.ch"

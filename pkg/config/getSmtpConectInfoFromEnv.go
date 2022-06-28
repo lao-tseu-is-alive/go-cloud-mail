@@ -1,6 +1,7 @@
 package config
 
 import (
+	"fmt"
 	"os"
 	"strconv"
 )
@@ -22,12 +23,7 @@ func GetSmtpConnectInfoFromEnv(defaultServer string, defaultPort int, defaultUse
 	srvPort := defaultPort
 	user := defaultUser
 	password := defaultPassword
-	mySmtpConnection := SmtpConnectInfo{
-		Server:   server,
-		Port:     srvPort,
-		User:     user,
-		Password: password,
-	}
+	var mySmtpConnection SmtpConnectInfo
 
 	var err error
 	val, exist := os.LookupEnv("SMTP_PORT")
@@ -58,6 +54,12 @@ func GetSmtpConnectInfoFromEnv(defaultServer string, defaultPort int, defaultUse
 	if exist {
 		password = val
 	}
-
+	mySmtpConnection = SmtpConnectInfo{
+		Server:   server,
+		Port:     srvPort,
+		User:     user,
+		Password: password,
+	}
+	fmt.Printf("in GetSmtpConnectInfoFromEnv mySmtpConnection : %+v", mySmtpConnection)
 	return &mySmtpConnection, nil
 }
